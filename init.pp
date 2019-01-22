@@ -43,16 +43,16 @@
 # Copyright 2019 Your name here, unless otherwise noted.
 #
 class ntp(
-    String $config_name          = $ntp::config_name,
-    String $config_file_mode     = $ntp::config_file_mode,
-    Array[String] $servers       = $ntp::servers,
-    String $service_name         = $ntp::service_name,
-    String $service_ensure       = $ntp::service_ensure,
-    Boolean $service_enable      = $ntp::service_enable,
-    Boolean $service_hasstatus   = $ntp::service_hasstatus,
-    Boolean $service_hasrestart  = $ntp::service_hasrestart,
-    String $package_name         = $ntp::package_name,
-    String $package_ensure       = $ntp::package_ensure,
+  String $config_name          = $ntp::params::config_name,
+  String $config_file_mode     = $ntp::params::config_file_mode,
+  Array[String] $servers       = $ntp::params::servers,
+  String $service_name         = $ntp::params::service_name,
+  String $service_ensure       = $ntp::params::service_ensure,
+  Boolean $service_enable      = $ntp::params::service_enable,
+  Boolean $service_hasstatus   = $ntp::params::service_hasstatus,
+  Boolean $service_hasrestart  = $ntp::params::service_hasrestart,
+  String $package_name         = $ntp::params::package_name,
+  String $package_ensure       = $ntp::params::package_ensure,
 
 ) inherits ::ntp::params {
   class{ '::ntp::install': }
